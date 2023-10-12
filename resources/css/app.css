@@ -1,0 +1,27 @@
+
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+    display: none;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #007bff;
+    border-color: #006fe6;
+}
+
+.info-layout {
+    max-width: 100px;
+}
+.img-rec {
+    min-width: 65px;
+    min-height: 23px;
+}
+.admin-rec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    min-height: 59px;
+    border-radius: 8px 8px 50px;
+}
+.user-panel, .user-panel .info {
+    white-space: normal;
+}
