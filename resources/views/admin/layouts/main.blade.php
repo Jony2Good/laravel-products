@@ -27,18 +27,21 @@
         .custom-file-input:lang(en) ~ .custom-file-label::after {
             display: none;
         }
+
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             background-color: #007bff;
             border-color: #006fe6;
         }
 
         .info-layout {
-          max-width: 100px;
+            max-width: 100px;
         }
+
         .img-rec {
             min-width: 65px;
             min-height: 23px;
         }
+
         .admin-rec {
             display: flex;
             justify-content: center;
@@ -47,9 +50,40 @@
             min-height: 59px;
             border-radius: 8px 8px 50px;
         }
+
         .user-panel, .user-panel .info {
             white-space: normal;
         }
+
+        .card {
+            background-color: rgba(55, 64, 80, 1);
+        }
+
+        .btn-layout {
+            min-width: 139px;
+            min-height: 30px;
+            background-color: #0FC5FF;
+        }
+
+        .btn-add {
+            display: inline-block;
+            padding: unset;
+            font-size: 16px;
+            border: none;
+            background-color: inherit;
+            color: #0FC5FF;
+            border-bottom: 1px dashed #0FC5FF;
+
+        }
+
+        .btn-add:hover {
+            color: #ffffff;
+            border-bottom: 1px dashed #ffffff;
+        }
+        .select-layout {
+            padding: 10px;
+        }
+
     </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -98,11 +132,7 @@
 <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
 <script>
     $.widget.bridge('uibutton', $.ui.button);
-    $(function () {
-        bsCustomFileInput.init();
-        //Initialize Select2 Elements
-        $('.select2').select2()
-    });
+
 </script>
 </body>
 </html>
