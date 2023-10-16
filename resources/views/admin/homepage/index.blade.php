@@ -21,16 +21,14 @@
                                 <th>{{__('Название')}}</th>
                                 <th>{{__('Статус')}}</th>
                                 <th>{{__('Атрибуты')}}</th>
-                                <th>{{__('Дата создания')}}</th>
-                                <th>{{__('Действия')}}</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($products as $item)
-                                <tr>
+                                <tr class="event" onclick="window.location.href='{{ route('admin.show', $item->id) }}'">
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{$item->article}}</td>
-                                    <td>{{$item->name}}</td>
+                                    <td>{{ $item->article }}</td>
+                                    <td>{{ $item->name }}</td>
                                     <td>
                                         @if($item->status === 'available')
                                             {{__('Доступен')}}
@@ -38,25 +36,10 @@
                                     </td>
                                     <td>
                                         <ul class="list-group">
-                                            @dump(json_encode($item->attributes))
-                                            <li class="d-block">Size:  </li>
-                                            <li class="d-block">Color:  </li>
+
+                                            <li class="d-block">Size: {{ $item->attributes['size'] }} </li>
+                                            <li class="d-block">Color: {{ $item->attributes['color'] }} </li>
                                         </ul>
-                                    </td>
-                                    <td>{{$item->created_at}}</td>
-                                    <td class="d-flex">
-                                        <a href=""><i
-                                                class="far fa-eye mr-2"></i></a>
-                                        <a class="text-success"
-                                           href=""><i
-                                                class="fas fa-pencil-alt mr-2"></i></a>
-                                        <form action="" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="border-0 text-danger bg-transparent" type="submit">
-                                                <i class="far fa-times-circle"></i>
-                                            </button>
-                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

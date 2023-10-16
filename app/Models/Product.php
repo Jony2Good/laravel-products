@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Casts\AsArrayObject;
+use Illuminate\Database\Eloquent\Casts\AsCollection;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,19 +15,19 @@ class Product extends Model
     protected $table = 'products';
     protected $guarded = false;
 
-    protected $casts = [
-      'attributes'  => 'array',
-    ];
 
     public function scopeAllowed($query)
     {
         return $query->where('status', 'available');
     }
 
-    public function attributes(): Attribute
+
+    protected function attributes(): Attribute
     {
+
         return Attribute::make(
-            get: fn($attributes) => json_decode($attributes, true),
+            get: fn (string $value) => json_decode($value, true),
+            set: fn (array $value) => json_encode($value),
         );
     }
 

@@ -22,6 +22,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'],
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('admin.index');
         Route::get('/create', 'CreateController')->name('admin.create');
+        Route::get('/{item}', 'ShowController')->name('admin.show');
         Route::post('/create', 'StoreController')->name('admin.store');
+        Route::get('/edit/{item}', 'EditController')->name('admin.edit');
+        Route::patch('/{item}', 'UpdateController')->name('admin.update');
+        Route::delete('/{item}', 'DestroyController')->name('admin.destroy');
     });
 });

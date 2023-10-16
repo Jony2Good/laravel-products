@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Main;
-use App\Models\Product;
-use Illuminate\Http\Request;
 
-class IndexController extends \App\Http\Controllers\Controller
+use App\Models\Product;
+
+class IndexController extends BaseController
 {
     public function __invoke()
     {

@@ -2,17 +2,10 @@
 
 namespace App\Http\Controllers\Admin\Main;
 
-use App\Http\Controllers\Controller;
-
-
-
-class CreateController extends Controller
+class CreateController extends BaseController
 {
-    /**
-     * Handle the incoming request.
-     */
     public function __invoke()
     {
-       return view('admin.product.create');
+        return view('admin.product.create');
     }
 }

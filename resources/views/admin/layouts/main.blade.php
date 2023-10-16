@@ -84,6 +84,15 @@
             padding: 10px;
         }
 
+        .link-layout {
+            width: 26px;
+            height: 26px;
+        }
+
+        .event {
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">

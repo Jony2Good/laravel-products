@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin\Main;
 
 use App\Http\Requests\Admin\Product\StoreRequest;
 
-
 class StoreController extends BaseController
 {
     /**
@@ -13,7 +12,7 @@ class StoreController extends BaseController
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-        $this->service->store($data, $request);
+        $this->storeService->stored($data);
         return redirect()->route('admin.index');
     }
 }

@@ -5,9 +5,9 @@ namespace App\Service;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 
-class ProductService
+class UpdateProductService
 {
-    public function store(array $data): void
+    public function updated(array $data, Product $product): void
     {
         try {
             Db::beginTransaction();
@@ -15,9 +15,9 @@ class ProductService
                 'article' => $data['article'],
                 'name' => $data['name'],
                 'status' => $data['status'],
-                'attributes' =>  json_encode(['size' => $data['size'], 'color' => $data['color']]),
+                'attributes' =>  ['size' => $data['size'], 'color' => $data['color']],
             ];
-            $prod = Product::create($arr);
+            $product->update($arr);
             Db::commit();
         } catch (\Exception $e) {
             echo $e->getMessage();
