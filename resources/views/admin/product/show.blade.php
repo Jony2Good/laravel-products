@@ -1,7 +1,7 @@
 @extends('admin.layouts.main')
 @section('page.title', $item->name)
 @section('content')
-    <div class="content-wrapper card">
+    <div class="content-wrapper card-bg">
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">

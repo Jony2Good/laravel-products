@@ -17,7 +17,7 @@ class StoreProductService
                 'status' => $data['status'],
                 'attributes' => ['size' => $data['size'], 'color' => $data['color']],
             ];
-           Product::create($arr);
+            Product::create($arr);
             Db::commit();
         } catch (\Exception $e) {
             echo $e->getMessage();

@@ -2,7 +2,7 @@
 @section('page.title', 'Редактировать')
 @section('content')
     <div class="content-wrapper">
-        <div class="content-header card">
+        <div class="content-header card-bg">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6 mb-4">
