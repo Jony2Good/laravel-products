@@ -11,15 +11,15 @@
                     <div class="col-sm-6 d-flex justify-content-end">
                         <div class="d-flex pt-1 mr-2">
                             <div class="mr-2">
-                                <a class="d-block link-layout text-center bg-dark" href="{{ route('admin.edit', $item->id) }}">
-                                    <i style="color: black;" class="fas fa-pencil-alt"></i>
+                                <a class="d-block link-layout text-center bg-dark opacity-50" href="{{ route('admin.edit', $item->id) }}">
+                                    <i style="color: #C4C4C4;" class="fas fa-pencil-alt"></i>
                                 </a>
                             </div>
                             <form action="{{ route('admin.destroy', $item->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button class="border-0 bg-dark" type="submit">
-                                    <i style="color: black;" class="fa fa-trash"></i>
+                                <button class="border-0 bg-dark opacity-50" type="submit">
+                                    <i style="color: #C4C4C4;" class="fa fa-trash"></i>
                                 </button>
                             </form>
                         </div>
@@ -34,11 +34,11 @@
             <div class="container-fluid">
                 <div class="row invoice-info">
                     <div class="col-sm-2 invoice-col">
-                        <div class="p-2 text-muted">{{ __('Артикул') }}</div>
-                        <div class="p-2 text-muted">{{ __('Название') }}</div>
-                        <div class="p-2 text-muted">{{ __('Статус') }}</div>
-                        <div class="p-2 text-muted">{{ __('Размер') }}</div>
-                        <div class="p-2 text-muted">{{ __('Цвет') }}</div>
+                        <div class="p-2 text-secondary">{{ __('Артикул') }}</div>
+                        <div class="p-2 text-secondary">{{ __('Название') }}</div>
+                        <div class="p-2 text-secondary">{{ __('Статус') }}</div>
+                        <div class="p-2 text-secondary">{{ __('Размер') }}</div>
+                        <div class="p-2 text-secondary">{{ __('Цвет') }}</div>
                     </div>
                     <div class="col-sm-10 invoice-col">
                         <div class="p-2 text-white align-self-end">{{ $item->article }}</div>

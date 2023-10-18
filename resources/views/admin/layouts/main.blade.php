@@ -6,7 +6,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Page title -->
-    <title>@yield('page.title', 'Admin panel')</title>
+    <title>@yield('page.title', 'Admin')</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -23,77 +23,8 @@
     <link rel="stylesheet" href="{{asset('plugins/daterangepicker/daterangepicker.css')}}">
     <!-- Select2 -->
     <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
-    <style>
-        .custom-file-input:lang(en) ~ .custom-file-label::after {
-            display: none;
-        }
 
-        .select2-container--default .select2-selection--multiple .select2-selection__choice {
-            background-color: #007bff;
-            border-color: #006fe6;
-        }
-
-        .info-layout {
-            max-width: 100px;
-        }
-
-        .img-rec {
-            min-width: 65px;
-            min-height: 23px;
-        }
-
-        .admin-rec {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-width: 100px;
-            min-height: 59px;
-            border-radius: 8px 8px 50px;
-        }
-
-        .user-panel, .user-panel .info {
-            white-space: normal;
-        }
-
-        .card {
-            background-color: rgba(55, 64, 80, 1);
-        }
-
-        .btn-layout {
-            min-width: 139px;
-            min-height: 30px;
-            background-color: #0FC5FF;
-        }
-
-        .btn-add {
-            display: inline-block;
-            padding: unset;
-            font-size: 16px;
-            border: none;
-            background-color: inherit;
-            color: #0FC5FF;
-            border-bottom: 1px dashed #0FC5FF;
-
-        }
-
-        .btn-add:hover {
-            color: #ffffff;
-            border-bottom: 1px dashed #ffffff;
-        }
-        .select-layout {
-            padding: 10px;
-        }
-
-        .link-layout {
-            width: 26px;
-            height: 26px;
-        }
-
-        .event {
-            cursor: pointer;
-        }
-
-    </style>
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -108,9 +39,22 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+
                 <div class="d-flex justify-content-end">
-                    <p class="text-secondary mb-0">Иванов Иван Иванович</p>
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }}
+                </a>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
                 </div>
             </li>
         </ul>
@@ -131,17 +75,10 @@
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('plugins/moment/moment.min.js')}}"></script>
 <script src="{{asset('plugins/daterangepicker/daterangepicker.js')}}"></script>
-<!-- overlayScrollbars -->
-<script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.j')}}"></script>
-<!-- AdminLTE App -->
 <script src="{{asset('dist/js/adminlte.js')}}"></script>
 <!-- bs-custom-file-input -->
 <script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
 <!-- Select2 -->
 <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
-<script>
-    $.widget.bridge('uibutton', $.ui.button);
-
-</script>
 </body>
 </html>

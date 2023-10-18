@@ -3,14 +3,18 @@
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
-                <div class="row mb-2">
+                <div class="row ">
+                    <div class="col-sm-12 mb-3">
+                        <div class="row">
                     <div class="col-sm-6">
-                        <h1 class="m-0 ">
+                        <h1 class="m-0">
                             <span class="text-danger border-bottom border-danger pb-2">{{__('ПРОДУКТЫ')}}</span>
                         </h1>
                     </div>
                     <div class="col-sm-6 d-flex justify-content-end">
                         <a class="btn btn-layout text-white" href="{{ route('admin.create') }}">{{__('Добавить')}}</a>
+                    </div>
+                        </div>
                     </div>
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover text-nowrap">

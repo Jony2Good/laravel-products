@@ -2,6 +2,7 @@
 .custom-file-input:lang(en) ~ .custom-file-label::after {
     display: none;
 }
+
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
     background-color: #007bff;
     border-color: #006fe6;
@@ -10,10 +11,12 @@
 .info-layout {
     max-width: 100px;
 }
+
 .img-rec {
     min-width: 65px;
     min-height: 23px;
 }
+
 .admin-rec {
     display: flex;
     justify-content: center;
@@ -22,6 +25,81 @@
     min-height: 59px;
     border-radius: 8px 8px 50px;
 }
+
 .user-panel, .user-panel .info {
     white-space: normal;
+}
+
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+    display: none;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #007bff;
+    border-color: #006fe6;
+}
+
+.info-layout {
+    max-width: 100px;
+}
+
+.img-rec {
+    min-width: 65px;
+    min-height: 23px;
+}
+
+.admin-rec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    min-height: 59px;
+    border-radius: 8px 8px 50px;
+}
+
+.user-panel, .user-panel .info {
+    white-space: normal;
+}
+
+.card {
+    background-color: rgba(55, 64, 80, 1);
+}
+
+.btn-layout {
+    min-width: 139px;
+    min-height: 30px;
+    background-color: #0FC5FF;
+}
+
+.btn-layout:hover {
+    background-color: greenyellow;
+}
+
+.btn-add {
+    display: inline-block;
+    padding: unset;
+    font-size: 16px;
+    border: none;
+    background-color: inherit;
+    color: #0FC5FF;
+    border-bottom: 1px dashed #0FC5FF;
+
+}
+
+.btn-add:hover {
+    color: #ffffff;
+    border-bottom: 1px dashed #ffffff;
+}
+
+.select-layout {
+    padding: 10px;
+}
+
+.link-layout {
+    width: 26px;
+    height: 26px;
+}
+
+.event {
+    cursor: pointer;
 }

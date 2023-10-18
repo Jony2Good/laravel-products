@@ -4,8 +4,10 @@ namespace App\Http\Requests\Admin\Product;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+
 class UpdateRequest extends FormRequest
 {
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -23,11 +25,10 @@ class UpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:10',
-            'article' => 'required|string|not_regex:/[^A-Za-z0-9]+$/',
+            'article' => 'required|string|not_regex:/[^A-Za-z0-9]+$/|unique:products,article,' . $this->item->id,
             'status' => 'required|string',
             'size' => 'required|string',
             'color' => 'required|string'
-
         ];
     }
 

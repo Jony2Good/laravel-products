@@ -23,7 +23,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:10',
-            'article' => 'required|string|unique:products|not_regex:/[^A-Za-z0-9]+$/',
+            'article' => 'required|string|not_regex:/[^A-Za-z0-9]+$/',
             'status' => 'required|string',
             'size' => 'required|string',
             'color' => 'required|string'
